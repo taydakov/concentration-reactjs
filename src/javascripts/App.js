@@ -14,9 +14,9 @@ import Results from './components/Results';
 import NoMatch from './components/NoMatch';
 
 // Use history object in <Router history={ history }> to use clean URLs
-const history = useBasename(createHistory)({
-  basename: ''
-})
+// const history = useBasename(createHistory)({
+//   basename: ''
+// })
 
 React.render(
   <Router>
