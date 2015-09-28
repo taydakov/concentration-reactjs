@@ -4,7 +4,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 /** React Components **/
-import MainTitle from './MainTitle.js';
+import MainTitle from './MainTitle';
 // import ChooseLevel from './ChooseLevel';
 /** Stores **/
 // import FiltersStore from '../stores/FiltersStore';
@@ -28,11 +28,8 @@ export default class ConcentrationGameApp extends React.Component {
 		var self = this;
 
 		return (
-			<div>
+			<div className='container'>
 				<MainTitle />
-				<Link to="/setup">Setup Page</Link>
-				<Link to="/play">Play Page</Link>
-				<Link to="/results">Results Page</Link>
 				{ self.props.children }
 			</div>
 		);
