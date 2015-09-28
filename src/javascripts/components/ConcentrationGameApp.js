@@ -1,10 +1,10 @@
 /* Static dependencies */
-// import 'stylesheets/modules/container';
 
 /* JS dependencies */
 import React from 'react';
 import { Link } from 'react-router';
 /** React Components **/
+import MainTitle from './MainTitle.js';
 // import ChooseLevel from './ChooseLevel';
 /** Stores **/
 // import FiltersStore from '../stores/FiltersStore';
@@ -29,7 +29,7 @@ export default class ConcentrationGameApp extends React.Component {
 
 		return (
 			<div>
-				<h1>Concentration App</h1>
+				<MainTitle />
 				<Link to="/setup">Setup Page</Link>
 				<Link to="/play">Play Page</Link>
 				<Link to="/results">Results Page</Link>

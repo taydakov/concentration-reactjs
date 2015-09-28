@@ -1,0 +1,49 @@
+.difficulty-selection {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform:    translateY(-50%);
+  -ms-transform:     translateY(-50%);
+  -o-transform:      translateY(-50%);
+  transform:         translateY(-50%);
+  text-align: center;
+}
+.difficulty-label {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2em;
+  color: #cf5037;
+}
+ul.difficulty-levels {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.easy-level, .medium-level, .hard-level {
+  font-family: "Josefin Slab Bold";
+  display: inline-block;
+  /*background-color: #cf5037;*/
+  color: white;
+  padding: .3em .9em .4em;
+  margin: 0.5em;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+}
+.easy-level {
+  /*background-color: #226ed7;*/
+}
+.medium-level {
+  /*background-color: #f0ad4e;*/
+}
+.level-label {
+  display: block;
+  font-size: 1.5em;
+  vertical-align: middle;
+  padding-top: 0.5em;
+}
+.level-pairs {
+  font-size: 0.5em;
+  vertical-align: middle;
+  margin-top: -2em;
+}

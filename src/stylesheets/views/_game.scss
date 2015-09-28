@@ -1,0 +1,121 @@
+.flip-cards-container {
+  position: relative;
+  top: 3em;
+  text-align: center;
+}
+.flip-cards-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.flip-card {
+  display: inline-block;
+  margin: 0.25em;
+}
+.flip-card-image, .flip-container, .flip-card-front, .flip-card-back {
+  width: 50px;
+  height: 75px;
+}
+/* Flip Animation */
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+
+  -ms-transform: perspective(1000px);
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d; 
+  -ms-transform-style: preserve-3d; 
+}
+/*.flip-container.flipped .flipper {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform:    rotateY(180deg);
+  -ms-transform:     rotateY(180deg);
+  -o-transform:      rotateY(180deg);
+  transform:         rotateY(180deg);
+}*/
+
+.flip-container.flipped .flip-card-back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform:    rotateY(0deg);
+  -ms-transform:     rotateY(0deg);
+  -o-transform:      rotateY(0deg);
+  transform:         rotateY(0deg);
+}
+.flip-container.flipped .flip-card-front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform:    rotateY(180deg);
+  -ms-transform:     rotateY(180deg);
+  -o-transform:      rotateY(180deg);
+  transform:         rotateY(180deg);
+}
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 0.6s;
+
+  -moz-transition: 0.6s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+.flip-card-front, .flip-card-back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  -moz-transform: rotateY(0deg);
+
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+  -o-transform: rotateY(0deg);
+
+  -ms-transition: 0.6s;
+  -ms-transform-style: preserve-3d;
+  -ms-transform: rotateY(0deg);
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flip-card-front {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+}
+.flip-card-back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+/* Progress indicator */
+.progress {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  bottom: 0;
+  width: 100%;
+}
+.progress-bar {
+  font-family: "Josefin Slab Bold";
+  background-color: #cf5037;
+}

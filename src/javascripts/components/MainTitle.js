@@ -3,7 +3,7 @@
 /* JS dependencies */
 import React from 'react';
 
-export default class Play extends React.Component {
+export default class MainTitle extends React.Component {
 
 	constructor (...args) {
 		super(...args);
@@ -14,11 +14,11 @@ export default class Play extends React.Component {
 
 	render () {
 		return (
-			<h1>This is Play page, pairsNum = { this.props.params ? this.props.params.pairsNum : '' }</h1>
+			<div className="concentration-label">Concentration Game</div>
 		);
 	}
 
 };
 
-Play.propTypes = {
+MainTitle.propTypes = {
 };
