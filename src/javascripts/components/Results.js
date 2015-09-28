@@ -14,7 +14,10 @@ export default class Results extends React.Component {
 
 	render () {
 		return (
-			<h1>This is Results page</h1>
+			<div className="congratulations-container">
+				<div className="congratulations-label">Victory!</div>
+				<a href="#/" className="play-again-label btn btn-primary">Play again</a>
+			</div>
 		);
 	}
 
