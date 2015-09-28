@@ -21,27 +21,28 @@ export default class Play extends React.Component {
 
 		var pairsNum = this.props.params ? this.props.params.pairsNum : 1;
 
-		var concentrationGame = new ConcentrationGame(pairsNum);
+		self.concentrationGame = new ConcentrationGame(pairsNum);
 		/* Game Event Handlers */
-		concentrationGame.on('cardsChanged', function (newCards) {
+		self.concentrationGame.on('cardsChanged', function (newCards) {
 			self.setState({
 				cards: newCards
 			});
 		});
-		concentrationGame.on('matchFound', function (matchesLeft, progress) {
+		self.concentrationGame.on('matchFound', function (matchesLeft, progress) {
 			console.log('matchFound');
 			self.setState({
 				matchesLeft: matchesLeft,
 				progress:    progress
 			});
 		});
-		concentrationGame.on('gameWon', function () {
+		self.concentrationGame.on('gameWon', function () {
 			console.log('gameWon');
-			// $location.path('/results');
+			// FIXME: replace with react router transition function
+			window.location.replace('/#/results');
 		});
 
 		self.setState({
-			cards: concentrationGame.cards
+			cards: self.concentrationGame.cards
 		});
 	}
 
@@ -49,11 +50,11 @@ export default class Play extends React.Component {
 		var self = this;
 
 		var cards = [];
-		this.state.cards.forEach(function (card) {
+		this.state.cards.forEach(function (card, index) {
 			var cardClassName = card.flipped ? 'flipped' : '';
 			cards.push(
-				<li className="flip-card">
-					<div className={ "flip-container" + cardClassName } onClick={ self.handleCardClick.bind(self)(card) }>
+				<li className="flip-card" key={ index }>
+					<div className={ "flip-container " + cardClassName } onClick={ self.handleCardClick.bind(self)(card) }>
 						<div className="flipper">
 							<div className="flip-card-front">
 								<img className="flip-card-image" src="images/cards/hidden_card.png" />
@@ -85,8 +86,11 @@ export default class Play extends React.Component {
 
 	/* Event Handlers */
 	handleCardClick(card) {
+		var self = this;
+
 		return function () {
 			console.log('handleCardClick card = ', card);
+			self.concentrationGame.flipCard(card.number);
 		}
 	}
 

@@ -2,6 +2,7 @@
 
 /* JS dependencies */
 import React from 'react';
+import { Link, History } from 'react-router';
 import Constants from '../constants/Constants';
 /** Components **/
 import MainTitle from './MainTitle';
@@ -19,13 +20,15 @@ export default class SetupLevel extends React.Component {
 		var self = this;
 
 		var levels = [];
-		Constants.UI.LEVELS.forEach(function (level) {
+		Constants.UI.LEVELS.forEach(function (level, index) {
 			levels.push(
-				<li ng-repeat="level in setup.levels">
-					<div className={"hard-level btn " + level.CLASS } onClick={ self.handleLevelClick(level.PAIRS_NUM) }>
-						<span className="level-label">{ level.TITLE }</span>
-						<span className="level-pairs">{ level.PAIRS_NUM } pairs</span>
-					</div>
+				<li key={ index }>
+					<Link to={ "/play/" + level.PAIRS_NUM }>
+						<div className={"hard-level btn " + level.CLASS }>
+							<span className="level-label">{ level.TITLE }</span>
+							<span className="level-pairs">{ level.PAIRS_NUM } pairs</span>
+						</div>
+					</Link>
 				</li>
 			);
 		});
@@ -41,12 +44,6 @@ export default class SetupLevel extends React.Component {
 				</div>
 			</div>
 		);
-	}
-
-	/* Event handlers */
-
-	handleLevelClick (pairsNum) {
-		console.log('handleLevelClick pairsNum = ', pairsNum);
 	}
 
 };

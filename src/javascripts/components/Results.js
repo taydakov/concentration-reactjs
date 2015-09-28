@@ -2,6 +2,7 @@
 
 /* JS dependencies */
 import React from 'react';
+import { Link } from 'react-router';
 
 export default class Results extends React.Component {
 
@@ -16,7 +17,7 @@ export default class Results extends React.Component {
 		return (
 			<div className="congratulations-container">
 				<div className="congratulations-label">Victory!</div>
-				<a href="#/" className="play-again-label btn btn-primary">Play again</a>
+				<Link to="/" className="play-again-label btn btn-primary">Play again</Link>
 			</div>
 		);
 	}

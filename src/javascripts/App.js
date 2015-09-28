@@ -4,8 +4,8 @@ import '../index.html';
 
 /* JS dependencies */
 import React from 'react';
-import { createHistory, useBasename } from 'history'
 import { Router, Route, IndexRoute, Link } from 'react-router';
+import { createHistory, useBasename } from 'history';
 /** Components **/
 import ConcentrationGameApp from './components/ConcentrationGameApp';
 import SetupLevel from './components/SetupLevel';
@@ -14,12 +14,12 @@ import Results from './components/Results';
 import NoMatch from './components/NoMatch';
 
 // Use history object in <Router history={ history }> to use clean URLs
-// const history = useBasename(createHistory)({
-//   basename: ''
-// })
+const history = useBasename(createHistory)({
+  basename: ''
+})
 
 React.render(
-  <Router >
+  <Router>
     <Route path='/' component={ ConcentrationGameApp }>
     	<IndexRoute component={ SetupLevel } />
       <Route path='setup'          component={ SetupLevel }/>
